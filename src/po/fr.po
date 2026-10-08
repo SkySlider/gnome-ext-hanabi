@@ -4,13 +4,14 @@
 # François <francois.odin@proton.me>, 2023.
 # Matt Sennin <m@donsan.fr>, 2024.
 # Miphonya <weblate@miphonya.ch>, 2024.
+# Aidar Nizamov <aidar.nizamov141@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-25 01:03+0900\n"
-"PO-Revision-Date: 2024-06-18 19:09+0000\n"
-"Last-Translator: Miphonya <weblate@miphonya.ch>\n"
+"PO-Revision-Date: 2026-10-09 16:51+0000\n"
+"Last-Translator: Aidar Nizamov <aidar.nizamov141@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gnome-ext-hanabi/"
 "gnome-ext-hanabi/fr/>\n"
 "Language: fr\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 #: src/panelMenu.ts:73 src/panelMenu.ts:87
 msgid "Pause"
@@ -54,11 +55,13 @@ msgstr "Volume"
 
 #: src/prefs.ts:44
 msgid "Random Start Position"
-msgstr ""
+msgstr "Position de départ alétoire"
 
 #: src/prefs.ts:45
 msgid "Start playback from a random position each time a video starts"
 msgstr ""
+"Démarrer la lecture à une position aléatoire chaque fois qu’une vidéo "
+"commence"
 
 #: src/prefs.ts:46
 msgid "Show Panel Menu"
@@ -66,11 +69,11 @@ msgstr "Afficher le raccourci de configuration"
 
 #: src/prefs.ts:47
 msgid "Show on Lock Screen"
-msgstr ""
+msgstr "Afficher sur l’écran de verrouillage"
 
 #: src/prefs.ts:48
 msgid "Show the live wallpaper on the lock screen"
-msgstr ""
+msgstr "Afficher le fond d’écran animé sur l’écran de verrouillage"
 
 #: src/prefs.ts:50
 msgid "Auto Pause"
@@ -78,13 +81,11 @@ msgstr "Pause automatique"
 
 #: src/prefs.ts:53
 msgid "Pause on Window Focus"
-msgstr ""
+msgstr "Mettre en pause lorsque la fenêtre est active"
 
 #: src/prefs.ts:54
-#, fuzzy
-#| msgid "Pause playback when an MPRIS media player is playing media"
 msgid "Pause playback when any window is focused"
-msgstr "Suspendre la lecture lorsqu'un lecteur MPRIS lit un média"
+msgstr "Suspendre la lecture lorsqu'une fenêtre est active"
 
 #: src/prefs.ts:56
 msgid "Low Battery Threshold"
@@ -116,16 +117,18 @@ msgstr "Modifier l'intervalle de changement du fond d'écran (minutes)"
 
 #: src/prefs.ts:69
 msgid "Overview"
-msgstr ""
+msgstr "Vue d’ensemble"
 
 #: src/prefs.ts:71
 msgid "Corner Radius"
-msgstr ""
+msgstr "Rayon des coins"
 
 #: src/prefs.ts:72
 msgid ""
 "Rounded corner radius in pixels for workspace background in the overview"
 msgstr ""
+"Rayon des coins arrondis en pixels pour l'arrière-plan des espaces de "
+"travail dans la vue d'ensemble"
 
 #: src/prefs.ts:74
 msgid "Experimental"
@@ -163,16 +166,13 @@ msgid "Print debug messages to log"
 msgstr "Affiche les messages de débogage dans les logs"
 
 #: src/prefs.ts:85
-#, fuzzy
-#| msgid "Preferences"
 msgid "Prefer clappersink"
-msgstr "Paramètres"
+msgstr "Privilégier clappersink"
 
 #: src/prefs.ts:86
-#, fuzzy
-#| msgid "Force use of gtk4paintablesink for video playback"
 msgid "Prefer clappersink over gtk4paintablesink for video playback"
-msgstr "Forcer l'utilisation de gtk4paintablesink pour la lecture vidéo"
+msgstr ""
+"Privilégier clappersink plutôt que gtk4paintablesink pour la lecture vidéo"
 
 #: src/prefs.ts:87
 msgid "Force GtkMediaFile"
@@ -184,11 +184,11 @@ msgstr "Forcer l'utilisation de GtkMediaFile pour la lecture vidéo"
 
 #: src/prefs.ts:89
 msgid "Enable Graphics Offload"
-msgstr ""
+msgstr "Activer le déchargement graphique"
 
 #: src/prefs.ts:90
 msgid "Enable graphics offload for improved performance"
-msgstr ""
+msgstr "Activer le déchargement graphique pour améliorer les performances"
 
 #: src/prefs.ts:91
 msgid "Startup Delay"
@@ -204,12 +204,14 @@ msgstr ""
 
 #: src/prefs.ts:94
 msgid "Border Stroke"
-msgstr ""
+msgstr "Contour de la bordure"
 
 #: src/prefs.ts:95
 msgid ""
 "Border width in pixels drawn inside the rounded-rect bounds (0 = disabled)"
 msgstr ""
+"Largeur de la bordure en pixels, dessinée à l’intérieur des limites du "
+"rectangle arrondi (0 = désactivée)"
 
 #: src/prefs.ts:160
 msgid "Video Path"

@@ -52,6 +52,7 @@ export default class HanabiExtension extends Extension {
 
     // Renderer subprocess and its relaunch timeout.
     private currentProcess: WaylandSubprocess | null = null;
+    private startupTimeoutId = 0;
     private launchRendererTimeoutId = 0;
     private reloadTime = RENDERER_RELOAD_DELAY_MS;
     private rendererSuspended = false;
@@ -96,30 +97,38 @@ export default class HanabiExtension extends Extension {
             const startupCompleteId = Main.layoutManager.connect(
                 'startup-complete',
                 () => {
-                    GLib.timeout_add(
-                        GLib.PRIORITY_DEFAULT,
-                        this.settings!.get_int('startup-delay'),
-                        () => {
-                            this.innerEnable();
-                            return false;
-                        }
-                    );
+                    this.scheduleInnerEnable();
                 }
             );
             this.signalConnections.push([Main.layoutManager, startupCompleteId]);
         } else {
-            GLib.timeout_add(
-                GLib.PRIORITY_DEFAULT,
-                this.settings.get_int('startup-delay'),
-                () => {
-                    this.innerEnable();
-                    return false;
-                }
-            );
+            this.scheduleInnerEnable();
         }
     }
 
+    private scheduleInnerEnable(): void {
+        if (!this.settings)
+            return;
+
+        if (this.startupTimeoutId)
+            GLib.source_remove(this.startupTimeoutId);
+
+        this.startupTimeoutId = GLib.timeout_add(
+            GLib.PRIORITY_DEFAULT,
+            this.settings.get_int('startup-delay'),
+            () => {
+                this.startupTimeoutId = 0;
+                if (this.settings)
+                    this.innerEnable();
+                return GLib.SOURCE_REMOVE;
+            }
+        );
+    }
+
     private innerEnable(): void {
+        if (!this.settings || this.isEnabled)
+            return;
+
         logger.debug('Activating overrides and starting renderer');
         this.shellOverride!.enable();
         this.windowManager!.enable();
@@ -269,6 +278,11 @@ export default class HanabiExtension extends Extension {
         }
 
         this.isEnabled = false;
+
+        if (this.startupTimeoutId) {
+            GLib.source_remove(this.startupTimeoutId);
+            this.startupTimeoutId = 0;
+        }
     }
 
     private killCurrentProcess(): void {

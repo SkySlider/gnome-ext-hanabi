@@ -1,3 +1,17 @@
+> [!TIP]
+> **Two things are fixed here on GNOME 51:**
+>
+> - **It crashed on startup.** Shell 51 removed `Shell.GLSLEffect`, which Hanabi used.
+> - **The video sometimes froze instead of looping.** At the end of the clip it rewinded
+>   but didn't always start playing again.
+>
+> ```bash
+> git clone https://github.com/SkySlider/gnome-ext-hanabi
+> cd gnome-ext-hanabi && make install
+> ```
+>
+> Log out and back in after. GNOME 51 only — 45–50 use the `javascript` branch.
+
 <p align="center"><img src="res/sparkler.svg" width="256"></p>
 
 <p align="center">Live Wallpaper for GNOME</p>  
@@ -38,10 +52,13 @@ Please click on the image to view _(redirect to YouTube)_
 
 ## GNOME Shell Support
 
-| Version |  42–44   |    45–50     |  50+   |
-| :-----: | :------: | :----------: | :----: |
-| Status  |    ⚠️    |      ✅      |   ✅   |
-| Branch  | `legacy` | `javascript` | `main` |
+| Version |  42–44   |    45–50     |    50    |      51      |
+| :-----: | :------: | :----------: | :------: | :----------: |
+| Status  |    ⚠️    |      ✅      |    ✅    |      ✅      |
+| Branch  | `legacy` | `javascript` |  `main`  |   `fixes`    |
+
+`main` supports up to GNOME 50. **GNOME 51 needs the `fixes` branch of this fork** — upstream
+has not merged 51 support yet, so `main` there will crash on startup on 51.
 
 ## Installation
 
